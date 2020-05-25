@@ -2,18 +2,17 @@ package ch.heigvd.gen.lab4;
 
 public class Product {
     public static final int SIZE_NOT_APPLICABLE = -1;
+    private Price price;
     private String code;
     private Color color;
     private Size size;
-    private double price;
-    private String currency;
 
-    public Product(String code, Color color, Size size, double price, String currency) {
+    public Product(String code, Color color, Size size, Price price) {
         this.code = code;
         this.color = color;
         this.size = size;
         this.price = price;
-        this.currency = currency;
+
     }
 
     public String getCode() {
@@ -29,11 +28,11 @@ public class Product {
     }
 
     public double getPrice() {
-        return price;
+        return price.getPrice();
     }
 
     public String getCurrency() {
-        return currency;
+        return price.getCurrency();
     }
 
     String getSizeFor() {
@@ -60,10 +59,10 @@ public class Product {
         }
 
         sb.append("\"price\": ");
-        sb.append(getPrice());
+        sb.append(price.getPrice());
         sb.append(", ");
         sb.append("\"currency\": \"");
-        sb.append(getCurrency());
+        sb.append(price.getCurrency());
         sb.append("\"}, ");
     }
 
