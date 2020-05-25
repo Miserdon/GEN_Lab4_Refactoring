@@ -44,7 +44,7 @@ public class Product {
         sb.append(color.getColorName());
         sb.append("\", ");
 
-        if (getSize() != Size.SIZE_NOT_APPLICABLE) {
+        if (size != Size.SIZE_NOT_APPLICABLE) {
             sb.append("\"size\": \"");
             sb.append(size);
             sb.append("\", ");
