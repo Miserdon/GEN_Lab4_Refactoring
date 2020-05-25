@@ -14,27 +14,15 @@ public class Product {
 
     }
 
-    void getProductContents(StringBuffer sb) {
-        sb.append("{");
-        sb.append("\"code\": \"");
-        sb.append(code);
-        sb.append("\", ");
-        sb.append("\"color\": \"");
-        sb.append(color.getColorName());
-        sb.append("\", ");
 
+    void getProductContents(StringBuffer sb) {
+        sb.append("{\"code\": \"" + code + "\", \"color\": \"" + color.getColorName() + "\", ");
+        
         if (size != Size.SIZE_NOT_APPLICABLE) {
-            sb.append("\"size\": \"");
-            sb.append(size);
-            sb.append("\", ");
+            sb.append("\"size\": \"" + size + "\",  ");
         }
 
-        sb.append("\"price\": ");
-        sb.append(price.getPrice());
-        sb.append(", ");
-        sb.append("\"currency\": \"");
-        sb.append(price.getCurrency());
-        sb.append("\"}, ");
+        sb.append("\"price\": " + price.getPrice() + ", \"currency\": \"" + price.getCurrency() + "\"}, ");
     }
 
 }
