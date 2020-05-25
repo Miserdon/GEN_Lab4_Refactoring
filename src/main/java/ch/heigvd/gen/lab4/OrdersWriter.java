@@ -1,25 +1,28 @@
 package ch.heigvd.gen.lab4;
 
-public class OrdersWriter {
-    private Orders orders;
+import java.util.ArrayList;
 
-    public OrdersWriter(Orders orders) {
-        this.orders = orders;
+public class OrdersWriter {
+    private ArrayList<Order> orders;
+
+    public OrdersWriter(ArrayList<Order> orders) {
+         this.orders = orders;
     }
 
     public String getContents() {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
-        for (int i = 0; i < orders.getOrdersCount(); i++) {
-            Order order = orders.getOrder(i);
+        for (Order order: orders ) {
+
+
             sb.append("{");
             sb.append("\"id\": ");
             sb.append(order.getOrderId());
             sb.append(", ");
             sb.append("\"products\": [");
-            for (int j = 0; j < order.getProductsCount(); j++) {
+            for (int index = 0; index < order.getProductsCount(); index++) {
 
-                order.getProduct(j).getProductContents(sb);
+                order.getProduct(index).getProductContents(sb);
             }
 
             if (order.getProductsCount() > 0) {
@@ -30,7 +33,7 @@ public class OrdersWriter {
             sb.append("}, ");
         }
 
-        if (orders.getOrdersCount() > 0) {
+        if (orders.size() > 0) {
             sb.delete(sb.length() - 2, sb.length());
         }
 
