@@ -46,15 +46,15 @@ public class Product {
     void getProductContents(StringBuffer sb) {
         sb.append("{");
         sb.append("\"code\": \"");
-        sb.append(getCode());
+        sb.append(code);
         sb.append("\", ");
         sb.append("\"color\": \"");
-        sb.append(getColorFor());
+        sb.append(color.getColorName());
         sb.append("\", ");
 
         if (getSize() != Size.SIZE_NOT_APPLICABLE) {
             sb.append("\"size\": \"");
-            sb.append(getSizeFor());
+            sb.append(size);
             sb.append("\", ");
         }
 
