@@ -20,9 +20,9 @@ public class OrdersWriter {
             sb.append(order.getOrderId());
             sb.append(", ");
             sb.append("\"products\": [");
-            for (int j = 0; j < order.getProductsCount(); j++) {
+            for (int index = 0; index < order.getProductsCount(); index++) {
 
-                order.getProduct(j).getProductContents(sb);
+                order.getProduct(index).getProductContents(sb);
             }
 
             if (order.getProductsCount() > 0) {
