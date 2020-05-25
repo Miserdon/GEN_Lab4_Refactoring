@@ -2,70 +2,45 @@ package ch.heigvd.gen.lab4;
 
 public class Product {
     public static final int SIZE_NOT_APPLICABLE = -1;
+    private Price price;
     private String code;
-    private int color;
-    private int size;
-    private double price;
-    private String currency;
+    private Color color;
+    private Size size;
 
-    public Product(String code, int color, int size, double price, String currency) {
+    public Product(String code, Color color, Size size, Price price) {
         this.code = code;
         this.color = color;
         this.size = size;
         this.price = price;
-        this.currency = currency;
+
     }
 
     public String getCode() {
         return code;
     }
 
-    public int getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public int getSize() {
+    public Size getSize() {
         return size;
     }
 
     public double getPrice() {
-        return price;
+        return price.getPrice();
     }
 
     public String getCurrency() {
-        return currency;
+        return price.getCurrency();
     }
 
     String getSizeFor() {
-        switch (getSize()) {
-            case 1:
-                return "XS";
-            case 2:
-                return "S";
-            case 3:
-                return "M";
-            case 4:
-                return "L";
-            case 5:
-                return "XL";
-            case 6:
-                return "XXL";
-            default:
-                return "Invalid Size";
-        }
+        return size.name();
     }
 
     String getColorFor() {
-        switch (getColor()) {
-            case 1:
-                return "blue";
-            case 2:
-                return "red";
-            case 3:
-                return "yellow";
-            default:
-                return "no color";
-        }
+        return getColor().getColorName();
     }
 
     void getProductContents(StringBuffer sb) {
@@ -77,17 +52,18 @@ public class Product {
         sb.append(getColorFor());
         sb.append("\", ");
 
-        if (getSize() != SIZE_NOT_APPLICABLE) {
+        if (getSize() != Size.SIZE_NOT_APPLICABLE) {
             sb.append("\"size\": \"");
             sb.append(getSizeFor());
             sb.append("\", ");
         }
 
         sb.append("\"price\": ");
-        sb.append(getPrice());
+        sb.append(price.getPrice());
         sb.append(", ");
         sb.append("\"currency\": \"");
-        sb.append(getCurrency());
+        sb.append(price.getCurrency());
         sb.append("\"}, ");
     }
+
 }
