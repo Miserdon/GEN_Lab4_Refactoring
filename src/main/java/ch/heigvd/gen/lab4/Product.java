@@ -1,7 +1,6 @@
 package ch.heigvd.gen.lab4;
 
 public class Product {
-    public static final int SIZE_NOT_APPLICABLE = -1;
     private Price price;
     private String code;
     private Color color;
