@@ -27,14 +27,6 @@ public class Product {
         return size;
     }
 
-    public double getPrice() {
-        return price.getPrice();
-    }
-
-    public String getCurrency() {
-        return price.getCurrency();
-    }
-
     void getProductContents(StringBuffer sb) {
         sb.append("{");
         sb.append("\"code\": \"");
