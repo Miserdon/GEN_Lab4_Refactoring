@@ -14,18 +14,6 @@ public class Product {
 
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public Size getSize() {
-        return size;
-    }
-
     void getProductContents(StringBuffer sb) {
         sb.append("{");
         sb.append("\"code\": \"");
