@@ -39,10 +39,6 @@ public class Product {
         return size.name();
     }
 
-    String getColorFor() {
-        return getColor().getColorName();
-    }
-
     void getProductContents(StringBuffer sb) {
         sb.append("{");
         sb.append("\"code\": \"");
