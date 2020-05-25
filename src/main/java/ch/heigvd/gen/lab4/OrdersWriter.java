@@ -12,8 +12,9 @@ public class OrdersWriter {
     public String getContents() {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
-        for (int i = 0; i < orders.size(); i++) {
-            Order order = orders.get(i);
+        for (Order order: orders ) {
+
+
             sb.append("{");
             sb.append("\"id\": ");
             sb.append(order.getOrderId());
