@@ -1,4 +1,4 @@
-package ch.heigvd.gen2019;
+package ch.heigvd.gen.lab4;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
