@@ -17,7 +17,7 @@ public class Product {
 
     void getProductContents(StringBuffer sb) {
         sb.append("{\"code\": \"" + code + "\", \"color\": \"" + color.getColorName() + "\", ");
-        
+
         if (size != Size.SIZE_NOT_APPLICABLE) {
             sb.append("\"size\": \"" + size + "\",  ");
         }
